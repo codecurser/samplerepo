@@ -3,32 +3,35 @@
    Interactions & Behavior
    ============================================================ */
 
-document.addEventListener('DOMContentLoaded', () => {
-
-  // ─────────────────────────────────────────────
-  // PAGE LOADER
-  // ─────────────────────────────────────────────
+// ─────────────────────────────────────────────
+// PAGE LOADER (Immediate Execution)
+// ─────────────────────────────────────────────
+(function() {
   const loader = document.getElementById('pageLoader');
   if (loader) {
     const hideLoader = () => {
-      if (!loader.classList.contains('loaded')) {
-        loader.classList.add('loaded');
-      }
+      console.log('Hiding loader...');
+      loader.classList.add('loaded');
+      setTimeout(() => {
+        loader.style.display = 'none';
+      }, 600);
     };
 
     // Hide loader on window load
-    window.addEventListener('load', () => {
-      setTimeout(hideLoader, 400);
-    });
+    window.addEventListener('load', hideLoader);
 
-    // Fallback in case load already fired
-    if (document.readyState === 'complete') {
+    // Fallback in case load already fired or ready state is complete
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
       setTimeout(hideLoader, 400);
     }
 
     // Safety timeout: hide loader after max 3 seconds anyway
     setTimeout(hideLoader, 3000);
   }
+})();
+
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('DOM Content Loaded');
 
   // ─────────────────────────────────────────────
   // NAV TOGGLE (Hamburger → X)
