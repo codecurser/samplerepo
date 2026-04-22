@@ -10,13 +10,24 @@ document.addEventListener('DOMContentLoaded', () => {
   // ─────────────────────────────────────────────
   const loader = document.getElementById('pageLoader');
   if (loader) {
+    const hideLoader = () => {
+      if (!loader.classList.contains('loaded')) {
+        loader.classList.add('loaded');
+      }
+    };
+
+    // Hide loader on window load
     window.addEventListener('load', () => {
-      setTimeout(() => loader.classList.add('loaded'), 400);
+      setTimeout(hideLoader, 400);
     });
+
     // Fallback in case load already fired
     if (document.readyState === 'complete') {
-      setTimeout(() => loader.classList.add('loaded'), 400);
+      setTimeout(hideLoader, 400);
     }
+
+    // Safety timeout: hide loader after max 3 seconds anyway
+    setTimeout(hideLoader, 3000);
   }
 
   // ─────────────────────────────────────────────
