@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Prof. Dr. Rajesh Kumar Sharma – Professor of Surgery | Academic, Researcher, Educator"/>
+<title>Prof. Dr. Rajesh Kumar Sharma | Professor of Surgery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0A1628;
+  --navy2:#112240;
+  --blue:#1A4B8C;
+  --blue2:#2563EB;
+  --sky:#4A90D9;
+  --gold:#C9A84C;
+  --gold2:#E8C97E;
+  --white:#FFFFFF;
+  --off:#F7F9FC;
+  --text:#1E2D3D;
+  --muted:#5A7185;
+  --border:#D4E1EF;
+  --card:#FFFFFF;
+  --shadow:0 4px 32px rgba(10,22,40,0.10);
+  --shadow2:0 2px 12px rgba(10,22,40,0.07);
+}
+
+html{scroll-behavior:smooth}
+body{font-family:'Lato',sans-serif;background:var(--white);color:var(--text);line-height:1.7;overflow-x:hidden}
+
+/* TYPOGRAPHY */
+h1,h2,h3,h4,h5{font-family:'Cormorant Garamond',serif;line-height:1.2;color:var(--navy)}
+h1{font-size:clamp(2.4rem,5vw,3.8rem);font-weight:600}
+h2{font-size:clamp(2rem,4vw,2.8rem);font-weight:600}
+h3{font-size:1.4rem;font-weight:600}
+p{font-size:1rem;color:var(--muted);line-height:1.8}
+a{text-decoration:none;color:inherit}
+
+/* UTILITY */
+.container{max-width:1140px;margin:0 auto;padding:0 28px}
+.section{padding:90px 0}
+.section-alt{background:var(--off)}
+.label{font-size:0.72rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.section-title{font-size:clamp(1.8rem,3.5vw,2.6rem);margin-bottom:10px}
+.section-sub{font-size:1rem;color:var(--muted);max-width:560px;margin-bottom:48px}
+.divider{width:48px;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold2));border-radius:99px;margin:16px 0 40px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,22,40,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.15);transition:all 0.3s}
+.nav-inner{max-width:1140px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:66px}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--white);letter-spacing:0.5px}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{font-size:0.8rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.7);padding:8px 14px;border-radius:6px;transition:all 0.2s}
+.nav-links a:hover{color:var(--gold);background:rgba(201,168,76,0.08)}
+.nav-cta{font-size:0.78rem!important;font-weight:700!important;background:var(--gold)!important;color:var(--navy)!important;padding:9px 20px!important;border-radius:6px!important}
+.nav-cta:hover{background:var(--gold2)!important;color:var(--navy)!important}
+.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.nav-toggle span{width:24px;height:2px;background:var(--white);border-radius:99px;transition:all 0.3s}
+
+/* HERO */
+.hero{min-height:100vh;background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 45%,#0D2B55 100%);display:flex;align-items:center;padding-top:66px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");opacity:1}
+.hero-accent{position:absolute;right:-120px;top:50%;transform:translateY(-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,0.18) 0%,transparent 70%);pointer-events:none}
+.hero-accent2{position:absolute;left:-80px;bottom:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,0.08) 0%,transparent 70%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;width:100%;max-width:1140px;margin:0 auto;padding:80px 28px}
+.hero-left{animation:fadeLeft 0.9s ease both}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.3);border-radius:99px;padding:6px 16px;font-size:0.75rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
+.hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite}
+.hero h1{color:var(--white);margin-bottom:14px;letter-spacing:-0.5px}
+.hero h1 em{color:var(--gold);font-style:italic}
+.hero-desig{font-size:1rem;font-weight:300;color:rgba(255,255,255,0.6);letter-spacing:1px;margin-bottom:8px}
+.hero-affil{font-size:0.9rem;color:rgba(255,255,255,0.45);letter-spacing:0.5px;margin-bottom:28px}
+.hero-tagline{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;color:rgba(255,255,255,0.7);border-left:3px solid var(--gold);padding-left:18px;margin:28px 0 36px;line-height:1.6}
+.hero-stats{display:flex;gap:32px;margin-bottom:40px}
+.hero-stat{text-align:center}
+.hero-stat strong{display:block;font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;color:var(--white);line-height:1}
+.hero-stat span{font-size:0.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-top:4px;display:block}
+.hero-stat-div{width:1px;background:rgba(255,255,255,0.12);align-self:stretch}
+.hero-btns{display:flex;flex-wrap:wrap;gap:14px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:8px;font-size:0.85rem;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;transition:all 0.25s;cursor:pointer;border:none}
+.btn-gold{background:var(--gold);color:var(--navy)}
+.btn-gold:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,0.35)}
+.btn-outline{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,0.3)}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+.btn-outline2{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,0.18)}
+.btn-outline2:hover{border-color:rgba(255,255,255,0.5);transform:translateY(-2px)}
+.hero-right{display:flex;justify-content:center;animation:fadeRight 0.9s ease 0.2s both}
+.hero-img-wrap{position:relative;width:360px;height:440px}
+.hero-img-bg{position:absolute;inset:0;border-radius:24px 24px 120px 24px;background:linear-gradient(135deg,rgba(37,99,235,0.3),rgba(201,168,76,0.2));border:1px solid rgba(201,168,76,0.25)}
+.hero-img{position:absolute;inset:12px;border-radius:18px 18px 110px 18px;background:linear-gradient(160deg,#1e3a5f,#0d2b55);overflow:hidden;display:flex;align-items:flex-end;justify-content:center}
+.hero-img-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
+.prof-silhouette{width:110px;height:130px;background:rgba(255,255,255,0.08);border-radius:55px 55px 10px 10px;position:relative}
+.prof-silhouette::before{content:'';position:absolute;top:-40px;left:50%;transform:translateX(-50%);width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,0.1)}
+.hero-img-label{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);background:rgba(10,22,40,0.85);backdrop-filter:blur(8px);border:1px solid rgba(201,168,76,0.25);border-radius:10px;padding:10px 20px;text-align:center;white-space:nowrap}
+.hero-img-label strong{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--white);display:block}
+.hero-img-label small{font-size:0.72rem;color:var(--gold);letter-spacing:1px;text-transform:uppercase}
+.hero-ring{position:absolute;top:-20px;right:-20px;width:80px;height:80px;border-radius:50%;border:2px solid rgba(201,168,76,0.3);animation:spin 20s linear infinite}
+.hero-ring2{position:absolute;bottom:-10px;left:-10px;width:50px;height:50px;border-radius:50%;border:2px solid rgba(37,99,235,0.4);animation:spin 15s linear infinite reverse}
+
+/* SCROLL INDICATOR */
+.scroll-hint{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,0.35);font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;animation:bounce 2s infinite}
+.scroll-mouse{width:22px;height:34px;border:1.5px solid rgba(255,255,255,0.25);border-radius:11px;position:relative}
+.scroll-mouse::after{content:'';position:absolute;top:6px;left:50%;transform:translateX(-50%);width:3px;height:6px;background:rgba(255,255,255,0.4);border-radius:99px;animation:scrollAnim 2s infinite}
+
+/* QUICK INFO STRIP */
+.strip{background:var(--blue);padding:20px 0}
+.strip-inner{display:flex;justify-content:center;gap:0;flex-wrap:wrap;max-width:1140px;margin:0 auto;padding:0 28px}
+.strip-item{display:flex;align-items:center;gap:10px;padding:8px 32px;border-right:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.85);font-size:0.85rem}
+.strip-item:last-child{border-right:none}
+.strip-icon{font-size:1.2rem}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:72px;align-items:start}
+.about-photo{background:linear-gradient(135deg,var(--off),var(--border));border-radius:20px;height:520px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.about-photo-bg{width:100%;height:100%;background:linear-gradient(160deg,#e8f0fe,#dbeafe);display:flex;align-items:center;justify-content:center;font-size:5rem;color:#93c5fd}
+.about-photo-badge{position:absolute;bottom:24px;left:24px;right:24px;background:var(--navy);border-radius:12px;padding:16px 20px}
+.about-photo-badge h4{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--white);margin-bottom:4px}
+.about-photo-badge p{font-size:0.78rem;color:rgba(255,255,255,0.5);margin:0;line-height:1.4}
+.qualif-list{display:flex;flex-direction:column;gap:12px;margin-bottom:32px}
+.qualif-item{display:flex;align-items:flex-start;gap:14px;padding:14px 18px;background:var(--off);border-radius:10px;border-left:3px solid var(--blue2)}
+.qualif-icon{font-size:1.3rem;flex-shrink:0;margin-top:2px}
+.qualif-item strong{font-size:0.88rem;font-weight:700;color:var(--navy);display:block}
+.qualif-item span{font-size:0.8rem;color:var(--muted)}
+.spec-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+.spec-tag{font-size:0.78rem;font-weight:700;letter-spacing:0.8px;padding:7px 16px;border-radius:99px;background:rgba(26,75,140,0.08);color:var(--blue);border:1px solid rgba(26,75,140,0.15)}
+.vision-box{background:linear-gradient(135deg,var(--navy),var(--navy2));border-radius:16px;padding:28px;border-left:4px solid var(--gold)}
+.vision-box h4{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--white);margin-bottom:8px}
+.vision-box p{font-size:0.88rem;color:rgba(255,255,255,0.6);margin:0}
+.mission-list{margin-top:20px;display:flex;flex-direction:column;gap:8px}
+.mission-item{display:flex;align-items:center;gap:10px;font-size:0.85rem;color:rgba(255,255,255,0.7)}
+.mission-item::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0}
+
+/* RESEARCH */
+.research-filter{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px}
+.filter-btn{font-size:0.78rem;font-weight:700;letter-spacing:0.8px;padding:8px 18px;border-radius:99px;border:1.5px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;transition:all 0.2s}
+.filter-btn.active,.filter-btn:hover{background:var(--navy);color:var(--white);border-color:var(--navy)}
+.pub-list{display:flex;flex-direction:column;gap:16px}
+.pub-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;transition:all 0.25s;position:relative;overflow:hidden}
+.pub-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--blue),var(--blue2))}
+.pub-card:hover{box-shadow:var(--shadow);transform:translateX(4px)}
+.pub-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:8px}
+.pub-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--navy);line-height:1.35;flex:1}
+.pub-badge{font-size:0.7rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:99px;white-space:nowrap;flex-shrink:0}
+.badge-indexed{background:rgba(34,197,94,0.1);color:#16a34a;border:1px solid rgba(34,197,94,0.2)}
+.badge-conf{background:rgba(37,99,235,0.08);color:var(--blue2);border:1px solid rgba(37,99,235,0.2)}
+.pub-authors{font-size:0.82rem;color:var(--muted);margin-bottom:6px}
+.pub-journal{font-size:0.82rem;font-style:italic;color:var(--blue);font-weight:700;margin-bottom:12px}
+.pub-footer{display:flex;gap:16px;align-items:center}
+.pub-link{font-size:0.78rem;font-weight:700;color:var(--blue2);display:flex;align-items:center;gap:5px;transition:opacity 0.2s}
+.pub-link:hover{opacity:0.7}
+.pub-year{font-size:0.78rem;color:var(--muted);margin-left:auto}
+.scholar-box{margin-top:36px;background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border:1px solid rgba(37,99,235,0.2);border-radius:16px;padding:28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:gap}
+.scholar-metrics{display:flex;gap:40px}
+.scholar-metric strong{display:block;font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--navy)}
+.scholar-metric span{font-size:0.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+
+/* TEACHING */
+.teach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.teach-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;transition:all 0.25s;cursor:pointer;text-align:center}
+.teach-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);border-color:var(--blue2)}
+.teach-icon{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;margin:0 auto 16px}
+.ti-blue{background:rgba(37,99,235,0.08);color:var(--blue2)}
+.ti-gold{background:rgba(201,168,76,0.1);color:var(--gold)}
+.ti-green{background:rgba(34,197,94,0.08);color:#16a34a}
+.teach-card h3{font-size:1.1rem;margin-bottom:8px}
+.teach-card p{font-size:0.85rem;margin-bottom:18px}
+.teach-tag-list{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.teach-tag{font-size:0.7rem;font-weight:700;letter-spacing:0.5px;padding:4px 10px;background:var(--off);color:var(--muted);border-radius:99px}
+
+/* AWARDS */
+.awards-timeline{display:flex;flex-direction:column;gap:0;position:relative;padding-left:40px}
+.awards-timeline::before{content:'';position:absolute;left:14px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--gold),var(--blue),var(--gold));opacity:0.3}
+.award-item{position:relative;padding:0 0 32px 28px}
+.award-item::before{content:'';position:absolute;left:-14px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--white);border:3px solid var(--gold);box-shadow:0 0 0 4px rgba(201,168,76,0.12)}
+.award-year{font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.award-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--navy);margin-bottom:4px}
+.award-body{font-size:0.85rem;color:var(--muted)}
+.award-inst{font-size:0.78rem;font-weight:700;color:var(--blue);margin-top:4px;display:block}
+
+/* ARTICLES */
+.articles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.article-card{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all 0.25s;cursor:pointer}
+.article-card:hover{box-shadow:var(--shadow);transform:translateY(-4px)}
+.article-thumb{height:160px;display:flex;align-items:center;justify-content:center;font-size:3rem;position:relative}
+.art-blue{background:linear-gradient(135deg,#EFF6FF,#DBEAFE)}
+.art-green{background:linear-gradient(135deg,#F0FDF4,#DCFCE7)}
+.art-warm{background:linear-gradient(135deg,#FFFBEB,#FEF3C7)}
+.article-cat{position:absolute;top:14px;left:14px;font-size:0.7rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:99px;background:rgba(255,255,255,0.85);backdrop-filter:blur(4px);color:var(--navy)}
+.article-body{padding:20px}
+.article-body h3{font-size:1.1rem;margin-bottom:8px;line-height:1.35}
+.article-body p{font-size:0.83rem;margin-bottom:14px}
+.article-meta{display:flex;justify-content:space-between;align-items:center;font-size:0.75rem;color:var(--muted)}
+.read-more{font-size:0.8rem;font-weight:700;color:var(--blue2);display:flex;align-items:center;gap:4px}
+.read-more:hover{gap:7px}
+
+/* MEDIA */
+.media-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.media-item{background:var(--off);border-radius:12px;overflow:hidden;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;position:relative;cursor:pointer;transition:all 0.2s}
+.media-item:hover .media-overlay{opacity:1}
+.media-overlay{position:absolute;inset:0;background:rgba(10,22,40,0.6);display:flex;align-items:center;justify-content:center;opacity:0;transition:all 0.25s;border-radius:12px}
+.play-btn{width:48px;height:48px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--navy)}
+.media-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(10,22,40,0.85));padding:16px 14px 12px;color:var(--white);font-size:0.78rem;font-weight:700}
+.media-emoji{font-size:2.5rem}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:60px;align-items:start}
+.contact-info{display:flex;flex-direction:column;gap:20px}
+.contact-item{display:flex;gap:16px;align-items:flex-start}
+.contact-icon{width:44px;height:44px;border-radius:12px;background:rgba(26,75,140,0.08);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;color:var(--blue)}
+.contact-item strong{font-size:0.82rem;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;color:var(--navy);display:block;margin-bottom:2px}
+.contact-item p{font-size:0.9rem;margin:0;line-height:1.5}
+.social-links{display:flex;gap:10px;margin-top:8px;flex-wrap:wrap}
+.social-btn{display:flex;align-items:center;gap:7px;padding:9px 16px;border-radius:8px;border:1.5px solid var(--border);font-size:0.78rem;font-weight:700;color:var(--text);transition:all 0.2s;cursor:pointer}
+.social-btn:hover{background:var(--navy);color:var(--white);border-color:var(--navy)}
+.contact-form{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:36px;box-shadow:var(--shadow2)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+.form-group label{font-size:0.78rem;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;color:var(--navy)}
+.form-group input,.form-group textarea,.form-group select{padding:12px 16px;border:1.5px solid var(--border);border-radius:10px;font-family:'Lato',sans-serif;font-size:0.9rem;color:var(--text);background:var(--white);transition:border-color 0.2s;outline:none;resize:none}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--blue2)}
+.form-group textarea{height:120px}
+.submit-btn{width:100%;padding:14px;background:linear-gradient(135deg,var(--navy),var(--blue));color:var(--white);border:none;border-radius:10px;font-family:'Lato',sans-serif;font-size:0.88rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all 0.25s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(26,75,140,0.35)}
+
+/* FOOTER */
+footer{background:var(--navy);color:rgba(255,255,255,0.6);padding:60px 0 32px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
+.footer-brand h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--white);margin-bottom:10px}
+.footer-brand h3 span{color:var(--gold)}
+.footer-brand p{font-size:0.85rem;line-height:1.7;color:rgba(255,255,255,0.45);margin-bottom:20px}
+.footer-col h4{font-size:0.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.footer-links{display:flex;flex-direction:column;gap:10px}
+.footer-links a{font-size:0.85rem;color:rgba(255,255,255,0.45);transition:color 0.2s}
+.footer-links a:hover{color:var(--white)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-bottom p{font-size:0.8rem}
+
+/* ANIMATIONS */
+@keyframes fadeLeft{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:translateX(0)}}
+@keyframes fadeRight{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:translateX(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.8)}}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+@keyframes scrollAnim{0%{top:6px;opacity:1}100%{top:18px;opacity:0}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:48px;padding:60px 28px}
+  .hero-right{order:-1}
+  .hero-img-wrap{width:280px;height:340px}
+  .about-grid,.contact-grid{grid-template-columns:1fr}
+  .teach-grid,.articles-grid,.media-grid,.footer-grid{grid-template-columns:repeat(2,1fr)}
+  .nav-links{display:none;position:fixed;top:66px;left:0;right:0;background:var(--navy);flex-direction:column;padding:20px;gap:4px}
+  .nav-links.open{display:flex}
+  .nav-toggle{display:flex}
+  .hero-stats{gap:20px}
+  .form-row{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .teach-grid,.articles-grid,.media-grid,.footer-grid{grid-template-columns:1fr}
+  .stats-strip{display:none}
+  .scholar-box{flex-direction:column;gap:20px}
+  .strip-inner{flex-direction:column;align-items:center}
+  .strip-item{border-right:none;border-bottom:1px solid rgba(255,255,255,0.1);padding:10px 20px}
+  .strip-item:last-child{border-bottom:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">Prof. Dr. <span>R.K. Sharma</span></div>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#awards">Awards</a>
+      <a href="#articles">Articles</a>
+      <a href="#media">Media</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </div>
+    <div class="nav-toggle" id="navToggle" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-accent"></div>
+  <div class="hero-accent2"></div>
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="hero-badge">🏥 Professor of Surgery</div>
+      <h1>Prof. Dr. Rajesh Kumar <em>Sharma</em></h1>
+      <p class="hero-desig">MS · MCh · FACS · FRCS (Edin)</p>
+      <p class="hero-affil">Department of Surgery, AIIMS — New Delhi &nbsp;|&nbsp; Unit Head, Urology & Pediatric Surgery</p>
+      <div class="hero-tagline">"Advancing Surgical Education, Research &amp; Patient Care with Precision and Purpose"</div>
+      <div class="hero-stats">
+        <div class="hero-stat"><strong>22+</strong><span>Years</span></div>
+        <div class="hero-stat-div"></div>
+        <div class="hero-stat"><strong>80+</strong><span>Publications</span></div>
+        <div class="hero-stat-div"></div>
+        <div class="hero-stat"><strong>1200+</strong><span>Citations</span></div>
+        <div class="hero-stat-div"></div>
+        <div class="hero-stat"><strong>500+</strong><span>Students</span></div>
+      </div>
+      <div class="hero-btns">
+        <a href="#research" class="btn btn-gold">📄 View Research</a>
+        <a href="#teaching" class="btn btn-outline">📚 Explore Teaching</a>
+        <a href="#contact" class="btn btn-outline2">✉️ Contact Me</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-img-wrap">
+        <div class="hero-img-bg"></div>
+        <div class="hero-img">
+          <div class="hero-img-placeholder">
+            <div style="font-size:6rem;">👨‍⚕️</div>
+          </div>
+        </div>
+        <div class="hero-img-label">
+          <strong>Prof. Dr. R.K. Sharma</strong>
+          <small>Professor of Surgery · AIIMS</small>
+        </div>
+        <div class="hero-ring"></div>
+        <div class="hero-ring2"></div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint"><div class="scroll-mouse"></div>Scroll</div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="strip-inner">
+    <div class="strip-item"><span class="strip-icon">🏥</span> AIIMS New Delhi</div>
+    <div class="strip-item"><span class="strip-icon">🔬</span> General Surgery · Urology · Pediatric Surgery</div>
+    <div class="strip-item"><span class="strip-icon">📑</span> PubMed Indexed Author</div>
+    <div class="strip-item"><span class="strip-icon">🎓</span> PG Guide & Examiner – NBE, MCI</div>
+    <div class="strip-item"><span class="strip-icon">🌍</span> International Speaker</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-photo reveal">
+        <div class="about-photo-bg">👨‍⚕️</div>
+        <div class="about-photo-badge">
+          <h4>Prof. Dr. Rajesh Kumar Sharma</h4>
+          <p>MS (Surgery) · MCh (Urology) · FACS · FRCS (Edinburgh)<br/>Professor & Unit Head, Dept. of Surgery, AIIMS New Delhi</p>
+        </div>
+      </div>
+      <div class="reveal" style="animation-delay:0.15s">
+        <div class="label">Who I Am</div>
+        <h2 class="section-title">About Me</h2>
+        <div class="divider"></div>
+        <p style="margin-bottom:24px">With over two decades of clinical practice, academic mentorship, and surgical research, I am committed to building the next generation of surgeons who combine scientific rigor with compassionate patient care. My work spans general surgery, urology, and pediatric surgery — from the operating theatre to the lecture hall.</p>
+
+        <div class="qualif-list">
+          <div class="qualif-item"><span class="qualif-icon">🎓</span><div><strong>MBBS — AIIMS New Delhi</strong><span>Gold Medalist · 1998</span></div></div>
+          <div class="qualif-item"><span class="qualif-icon">🎓</span><div><strong>MS (General Surgery) — AIIMS New Delhi</strong><span>2002</span></div></div>
+          <div class="qualif-item"><span class="qualif-icon">🎓</span><div><strong>MCh (Urology) — PGI Chandigarh</strong><span>2006</span></div></div>
+          <div class="qualif-item"><span class="qualif-icon">🏅</span><div><strong>FACS — American College of Surgeons</strong><span>Fellow · 2010</span></div></div>
+          <div class="qualif-item"><span class="qualif-icon">🏅</span><div><strong>FRCS — Royal College of Surgeons, Edinburgh</strong><span>Fellow · 2012</span></div></div>
+        </div>
+
+        <div class="label">Areas of Specialization</div>
+        <div class="spec-tags">
+          <span class="spec-tag">General Surgery</span>
+          <span class="spec-tag">Urology</span>
+          <span class="spec-tag">Pediatric Surgery</span>
+          <span class="spec-tag">Minimal Access Surgery</span>
+          <span class="spec-tag">Surgical Oncology</span>
+          <span class="spec-tag">Trauma Surgery</span>
+        </div>
+
+        <div class="vision-box">
+          <h4>🌟 Vision & Mission</h4>
+          <p><strong style="color:rgba(255,255,255,0.85)">Vision:</strong> Build future surgeons who blend scientific knowledge with compassion and integrity.</p>
+          <div class="mission-list">
+            <div class="mission-item">Strengthen surgical education at undergraduate and postgraduate levels</div>
+            <div class="mission-item">Promote a culture of evidence-based clinical research</div>
+            <div class="mission-item">Encourage ethical and data-driven surgical practice</div>
+            <div class="mission-item">Enhance patient awareness through public health initiatives</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEACHING -->
+<section class="section section-alt" id="teaching">
+  <div class="container">
+    <div class="reveal">
+      <div class="label">For Students & Professionals</div>
+      <h2 class="section-title">Teaching & Academic Resources</h2>
+      <div class="divider"></div>
+      <p class="section-sub">Comprehensive materials for undergraduate students, postgraduate residents, and surgical trainees.</p>
+    </div>
+    <div class="teach-grid reveal">
+      <div class="teach-card">
+        <div class="teach-icon ti-blue">📖</div>
+        <h3>Lecture Notes & Slides</h3>
+        <p>Topic-wise surgical lectures, annotated slides, and clinical summaries for UG & PG students.</p>
+        <div class="teach-tag-list">
+          <span class="teach-tag">General Surgery</span><span class="teach-tag">Urology</span><span class="teach-tag">Pediatric Surgery</span><span class="teach-tag">PDF Downloads</span>
+        </div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-icon ti-gold">🎬</div>
+        <h3>Educational Videos</h3>
+        <p>Surgical technique demonstrations, operative videos, and didactic teaching sessions.</p>
+        <div class="teach-tag-list">
+          <span class="teach-tag">Operative Techniques</span><span class="teach-tag">Anatomy Reviews</span><span class="teach-tag">Case Studies</span>
+        </div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-icon ti-green">🩺</div>
+        <h3>Clinical Case Discussions</h3>
+        <p>Real anonymized cases with differential diagnoses, surgical planning, and outcome analysis.</p>
+        <div class="teach-tag-list">
+          <span class="teach-tag">Interactive Cases</span><span class="teach-tag">MCQ Bank</span><span class="teach-tag">Discussion Board</span>
+        </div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-icon ti-blue">📝</div>
+        <h3>PG Examination Guidance</h3>
+        <p>Structured preparation strategies for MS/MCh entrance exams, theory, and viva voce.</p>
+        <div class="teach-tag-list">
+          <span class="teach-tag">MS Entrance</span><span class="teach-tag">MCh Entrance</span><span class="teach-tag">Theory Tips</span>
+        </div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-icon ti-gold">📋</div>
+        <h3>Logbook & Protocols</h3>
+        <p>Surgical logbook templates, operation notes, and standardized care protocols.</p>
+        <div class="teach-tag-list">
+          <span class="teach-tag">MCI Logbook Format</span><span class="teach-tag">SOP Manuals</span><span class="teach-tag">Checklists</span>
+        </div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-icon ti-green">💾</div>
+        <h3>Downloadable Materials</h3>
+        <p>Free access to reference guides, previous year question papers, and surgical atlases.</p>
+        <div class="teach-tag-list">
+          <span class="teach-tag">Reference Sheets</span><span class="teach-tag">PYQs</span><span class="teach-tag">Surgical Atlas</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section class="section" id="research">
+  <div class="container">
+    <div class="reveal">
+      <div class="label">Academic Output</div>
+      <h2 class="section-title">Research & Publications</h2>
+      <div class="divider"></div>
+      <p class="section-sub">Peer-reviewed indexed publications, conference presentations, and ongoing research projects.</p>
+    </div>
+    <div class="research-filter reveal">
+      <button class="filter-btn active" onclick="filterPub(this,'all')">All</button>
+      <button class="filter-btn" onclick="filterPub(this,'urology')">Urology</button>
+      <button class="filter-btn" onclick="filterPub(this,'surgery')">General Surgery</button>
+      <button class="filter-btn" onclick="filterPub(this,'pediatric')">Pediatric Surgery</button>
+      <button class="filter-btn" onclick="filterPub(this,'conference')">Conferences</button>
+    </div>
+    <div class="pub-list reveal" id="pubList">
+      <div class="pub-card" data-cat="urology">
+        <div class="pub-top">
+          <div class="pub-title">Laparoscopic Pyeloplasty in Pelvi-Ureteric Junction Obstruction: A 10-Year Institutional Experience</div>
+          <span class="pub-badge badge-indexed">Indexed</span>
+        </div>
+        <div class="pub-authors">Sharma RK, Mehta A, Singh P, et al.</div>
+        <div class="pub-journal">Indian Journal of Urology · Volume 38, Issue 2</div>
+        <div class="pub-footer">
+          <a class="pub-link" href="#">🔗 DOI: 10.4103/iju.IJU_123_21</a>
+          <span class="pub-year">2022</span>
+        </div>
+      </div>
+      <div class="pub-card" data-cat="surgery">
+        <div class="pub-top">
+          <div class="pub-title">Outcome Analysis of Damage Control Surgery in Polytrauma: Prospective Cohort Study</div>
+          <span class="pub-badge badge-indexed">Indexed</span>
+        </div>
+        <div class="pub-authors">Sharma RK, Gupta V, Rao SN, Kumar A</div>
+        <div class="pub-journal">Journal of Trauma & Acute Care Surgery · Volume 92, Issue 4</div>
+        <div class="pub-footer">
+          <a class="pub-link" href="#">🔗 DOI: 10.1097/TA.0000000000003234</a>
+          <span class="pub-year">2021</span>
+        </div>
+      </div>
+      <div class="pub-card" data-cat="pediatric">
+        <div class="pub-top">
+          <div class="pub-title">Minimally Invasive Repair of Congenital Diaphragmatic Hernia: Long-term Follow-up</div>
+          <span class="pub-badge badge-indexed">Indexed</span>
+        </div>
+        <div class="pub-authors">Sharma RK, Bhatia M, Kaur R</div>
+        <div class="pub-journal">Journal of Pediatric Surgery · Volume 56, Issue 7</div>
+        <div class="pub-footer">
+          <a class="pub-link" href="#">🔗 DOI: 10.1016/j.jpedsurg.2021.02.015</a>
+          <span class="pub-year">2021</span>
+        </div>
+      </div>
+      <div class="pub-card" data-cat="conference">
+        <div class="pub-top">
+          <div class="pub-title">Robotic Radical Cystectomy with Intracorporeal Neobladder: Technique Refinements & Outcomes</div>
+          <span class="pub-badge badge-conf">Conference</span>
+        </div>
+        <div class="pub-authors">Sharma RK</div>
+        <div class="pub-journal">ASI Annual Conference — Presidential Invited Address · Hyderabad</div>
+        <div class="pub-footer">
+          <span class="pub-year">2023</span>
+        </div>
+      </div>
+      <div class="pub-card" data-cat="urology">
+        <div class="pub-top">
+          <div class="pub-title">Single-Incision Laparoscopic Nephrectomy vs Conventional Multi-Port: A Randomized Controlled Trial</div>
+          <span class="pub-badge badge-indexed">Indexed</span>
+        </div>
+        <div class="pub-authors">Sharma RK, Jain D, Tiwari S, et al.</div>
+        <div class="pub-journal">BJU International · Volume 128, Issue 5</div>
+        <div class="pub-footer">
+          <a class="pub-link" href="#">🔗 DOI: 10.1111/bju.15234</a>
+          <span class="pub-year">2020</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="scholar-box reveal" style="margin-top:36px;background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border:1px solid rgba(37,99,235,0.2);border-radius:16px;padding:28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px">
+      <div>
+        <div class="label" style="margin-bottom:6px">Google Scholar Profile</div>
+        <h3 style="margin-bottom:4px">Citation Metrics</h3>
+        <p style="margin:0;font-size:0.85rem">Verified by Google Scholar · Updated 2024</p>
+      </div>
+      <div class="scholar-metrics">
+        <div class="scholar-metric" style="text-align:center"><strong>1,284</strong><span>Citations</span></div>
+        <div class="scholar-metric" style="text-align:center"><strong>21</strong><span>h-index</span></div>
+        <div class="scholar-metric" style="text-align:center"><strong>38</strong><span>i10-index</span></div>
+        <div class="scholar-metric" style="text-align:center"><strong>80+</strong><span>Papers</span></div>
+      </div>
+      <a href="#" class="btn btn-gold" style="white-space:nowrap">View Google Scholar →</a>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section class="section section-alt" id="awards">
+  <div class="container">
+    <div class="reveal">
+      <div class="label">Recognitions & Honours</div>
+      <h2 class="section-title">Awards & Achievements</h2>
+      <div class="divider"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px" class="reveal">
+      <div class="awards-timeline">
+        <div class="award-item">
+          <div class="award-year">2023</div>
+          <div class="award-title">Orator Award — ASI Annual Conference</div>
+          <div class="award-body">Presidential Invited Lecture on Robotic Urology</div>
+          <span class="award-inst">Association of Surgeons of India</span>
+        </div>
+        <div class="award-item">
+          <div class="award-year">2022</div>
+          <div class="award-title">Best Research Paper Award</div>
+          <div class="award-body">Pediatric Surgery category — National Surgical Symposium</div>
+          <span class="award-inst">Indian Association of Pediatric Surgeons</span>
+        </div>
+        <div class="award-item">
+          <div class="award-year">2021</div>
+          <div class="award-title">Distinguished Teacher Award</div>
+          <div class="award-body">Recognized for excellence in postgraduate surgical training</div>
+          <span class="award-inst">AIIMS New Delhi</span>
+        </div>
+        <div class="award-item">
+          <div class="award-year">2019</div>
+          <div class="award-title">Fellowship — Urological Society of India</div>
+          <div class="award-body">FUSI conferred for contributions to urological research</div>
+          <span class="award-inst">Urological Society of India</span>
+        </div>
+      </div>
+      <div class="awards-timeline">
+        <div class="award-item">
+          <div class="award-year">2018</div>
+          <div class="award-title">Young Surgeon Award</div>
+          <div class="award-body">Excellence in minimally invasive surgical outcomes</div>
+          <span class="award-inst">Asia Pacific Surgical Association</span>
+        </div>
+        <div class="award-item">
+          <div class="award-year">2016</div>
+          <div class="award-title">ICMR Research Grant (Principal Investigator)</div>
+          <div class="award-body">Multicenter trial on laparoscopic techniques in pediatric urology</div>
+          <span class="award-inst">Indian Council of Medical Research</span>
+        </div>
+        <div class="award-item">
+          <div class="award-year">2014</div>
+          <div class="award-title">International Invited Speaker</div>
+          <div class="award-body">Presented at the American Urological Association Annual Meeting</div>
+          <span class="award-inst">AUA · San Francisco, USA</span>
+        </div>
+        <div class="award-item">
+          <div class="award-year">2002</div>
+          <div class="award-title">AIIMS Gold Medal — MBBS</div>
+          <div class="award-body">University rank holder and gold medallist</div>
+          <span class="award-inst">AIIMS New Delhi</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLES -->
+<section class="section" id="articles">
+  <div class="container">
+    <div class="reveal">
+      <div class="label">Knowledge & Awareness</div>
+      <h2 class="section-title">Articles & Public Health</h2>
+      <div class="divider"></div>
+      <p class="section-sub">Patient education articles and awareness content in simple, accessible language.</p>
+    </div>
+    <div class="articles-grid reveal">
+      <div class="article-card">
+        <div class="article-thumb art-blue"><span>🫁</span><span class="article-cat">Patient Guide</span></div>
+        <div class="article-body">
+          <h3>Understanding Kidney Stones: Causes, Prevention & When to Seek Surgery</h3>
+          <p>A comprehensive guide for patients and families on managing urolithiasis — symptoms, diet, and treatment options explained clearly.</p>
+          <div class="article-meta">
+            <span>June 2024 · 6 min read</span>
+            <a href="#" class="read-more">Read More →</a>
+          </div>
+        </div>
+      </div>
+      <div class="article-card">
+        <div class="article-thumb art-green"><span>👶</span><span class="article-cat">Pediatric Health</span></div>
+        <div class="article-body">
+          <h3>Hernia in Children: What Every Parent Should Know</h3>
+          <p>Inguinal and umbilical hernias in infants and toddlers — when to worry, what surgery involves, and recovery expectations.</p>
+          <div class="article-meta">
+            <span>April 2024 · 5 min read</span>
+            <a href="#" class="read-more">Read More →</a>
+          </div>
+        </div>
+      </div>
+      <div class="article-card">
+        <div class="article-thumb art-warm"><span>🩺</span><span class="article-cat">Surgical Awareness</span></div>
+        <div class="article-body">
+          <h3>Laparoscopic vs Open Surgery: Making an Informed Choice</h3>
+          <p>Demystifying minimally invasive surgery — benefits, risks, recovery, and how to have an informed conversation with your surgeon.</p>
+          <div class="article-meta">
+            <span>February 2024 · 7 min read</span>
+            <a href="#" class="read-more">Read More →</a>
+          </div>
+        </div>
+      </div>
+      <div class="article-card">
+        <div class="article-thumb art-blue"><span>🔬</span><span class="article-cat">Research Update</span></div>
+        <div class="article-body">
+          <h3>Robotic Surgery in India: The Future of Precision Medicine</h3>
+          <p>An overview of how robotic-assisted surgery is reshaping outcomes in urology and oncology across Indian institutions.</p>
+          <div class="article-meta">
+            <span>January 2024 · 8 min read</span>
+            <a href="#" class="read-more">Read More →</a>
+          </div>
+        </div>
+      </div>
+      <div class="article-card">
+        <div class="article-thumb art-green"><span>🧬</span><span class="article-cat">Cancer Awareness</span></div>
+        <div class="article-body">
+          <h3>Early Warning Signs of Prostate Cancer You Should Not Ignore</h3>
+          <p>A patient-friendly guide to prostate health, PSA screening, and the importance of early detection in improving outcomes.</p>
+          <div class="article-meta">
+            <span>November 2023 · 5 min read</span>
+            <a href="#" class="read-more">Read More →</a>
+          </div>
+        </div>
+      </div>
+      <div class="article-card">
+        <div class="article-thumb art-warm"><span>🏥</span><span class="article-cat">Education</span></div>
+        <div class="article-body">
+          <h3>A Career in Surgery: Guide for MBBS Students Choosing Specialization</h3>
+          <p>Practical advice on choosing surgical specialties, preparing for PG entrance, and building a surgical career in India.</p>
+          <div class="article-meta">
+            <span>October 2023 · 10 min read</span>
+            <a href="#" class="read-more">Read More →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEDIA -->
+<section class="section section-alt" id="media">
+  <div class="container">
+    <div class="reveal">
+      <div class="label">Conferences & Media</div>
+      <h2 class="section-title">Media & Conference Gallery</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="media-grid reveal">
+      <div class="media-item" style="background:linear-gradient(135deg,#EFF6FF,#DBEAFE)">
+        <span class="media-emoji">🎤</span>
+        <div class="media-overlay"><div class="play-btn">▶</div></div>
+        <div class="media-label">ASI Annual Conference — Presidential Address 2023</div>
+      </div>
+      <div class="media-item" style="background:linear-gradient(135deg,#F0FDF4,#DCFCE7)">
+        <span class="media-emoji">🏛️</span>
+        <div class="media-overlay"><div class="play-btn">▶</div></div>
+        <div class="media-label">AUA Annual Meeting — San Francisco 2019</div>
+      </div>
+      <div class="media-item" style="background:linear-gradient(135deg,#FFFBEB,#FEF3C7)">
+        <span class="media-emoji">📹</span>
+        <div class="media-overlay"><div class="play-btn">▶</div></div>
+        <div class="media-label">Live Surgery Demonstration — National Workshop</div>
+      </div>
+      <div class="media-item" style="background:linear-gradient(135deg,#FFF1F2,#FFE4E6)">
+        <span class="media-emoji">🎓</span>
+        <div class="media-overlay"><div class="play-btn">▶</div></div>
+        <div class="media-label">CME Lecture — Advances in Pediatric Urology</div>
+      </div>
+      <div class="media-item" style="background:linear-gradient(135deg,#F5F3FF,#EDE9FE)">
+        <span class="media-emoji">📺</span>
+        <div class="media-overlay"><div class="play-btn">▶</div></div>
+        <div class="media-label">TV Interview — Patient Awareness on Kidney Health</div>
+      </div>
+      <div class="media-item" style="background:linear-gradient(135deg,#ECFDF5,#D1FAE5)">
+        <span class="media-emoji">🌐</span>
+        <div class="media-overlay"><div class="play-btn">▶</div></div>
+        <div class="media-label">International Webinar — Robotic Surgery Outcomes 2023</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="reveal">
+      <div class="label">Get in Touch</div>
+      <h2 class="section-title">Contact & Connect</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="contact-item">
+          <div class="contact-icon">🏥</div>
+          <div>
+            <strong>Institutional Address</strong>
+            <p>Department of Surgery, Room 412,<br/>All India Institute of Medical Sciences,<br/>Ansari Nagar, New Delhi – 110 029</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <strong>Academic Email</strong>
+            <p>rksharma@aiims.ac.in</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <strong>Dept. Office</strong>
+            <p>+91 (11) 2659-XXXX<br/><span style="font-size:0.78rem;color:var(--muted)">Mon–Fri, 10:00 AM – 4:00 PM</span></p>
+          </div>
+        </div>
+        <div>
+          <strong style="font-size:0.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--navy);display:block;margin-bottom:12px">Connect Online</strong>
+          <div class="social-links">
+            <a href="#" class="social-btn">🔗 LinkedIn</a>
+            <a href="#" class="social-btn">🔬 ResearchGate</a>
+            <a href="#" class="social-btn">📖 Google Scholar</a>
+            <a href="#" class="social-btn">▶️ YouTube</a>
+            <a href="#" class="social-btn">🐦 Twitter / X</a>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form reveal" style="animation-delay:0.15s">
+        <h3 style="font-size:1.4rem;margin-bottom:6px">Send a Message</h3>
+        <p style="font-size:0.85rem;margin-bottom:24px">For academic inquiries, research collaboration, or media requests.</p>
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input type="text" placeholder="Arjun"/></div>
+          <div class="form-group"><label>Last Name</label><input type="text" placeholder="Mehta"/></div>
+        </div>
+        <div class="form-group"><label>Email Address</label><input type="email" placeholder="arjun@example.com"/></div>
+        <div class="form-group">
+          <label>Purpose of Contact</label>
+          <select>
+            <option>Academic / Research Collaboration</option>
+            <option>Student / Teaching Inquiry</option>
+            <option>Media / Interview Request</option>
+            <option>Patient Referral</option>
+            <option>General Inquiry</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Message</label><textarea placeholder="Write your message here…"></textarea></div>
+        <button class="submit-btn" onclick="handleSubmit()">Send Message →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>Prof. Dr. <span>R.K. Sharma</span></h3>
+        <p>Professor of Surgery, Urologist &amp; Pediatric Surgeon at AIIMS New Delhi. Committed to academic excellence, evidence-based surgery, and compassionate patient care.</p>
+        <div class="social-links">
+          <a href="#" class="social-btn" style="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.1);color:rgba(255,255,255,0.6)">🔗</a>
+          <a href="#" class="social-btn" style="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.1);color:rgba(255,255,255,0.6)">🔬</a>
+          <a href="#" class="social-btn" style="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.1);color:rgba(255,255,255,0.6)">▶️</a>
+          <a href="#" class="social-btn" style="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.1);color:rgba(255,255,255,0.6)">🐦</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <div class="footer-links">
+          <a href="#about">About Me</a>
+          <a href="#teaching">Teaching Resources</a>
+          <a href="#research">Research & Publications</a>
+          <a href="#awards">Awards</a>
+          <a href="#articles">Articles</a>
+          <a href="#media">Media</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Research Areas</h4>
+        <div class="footer-links">
+          <a href="#">General Surgery</a>
+          <a href="#">Urology</a>
+          <a href="#">Pediatric Surgery</a>
+          <a href="#">Minimal Access Surgery</a>
+          <a href="#">Surgical Oncology</a>
+          <a href="#">Trauma Surgery</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="#">Download CV</a>
+          <a href="#">PubMed Profile</a>
+          <a href="#">Google Scholar</a>
+          <a href="#">ResearchGate</a>
+          <a href="#">AIIMS Faculty Page</a>
+          <a href="#">YouTube Channel</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Prof. Dr. Rajesh Kumar Sharma · All rights reserved</p>
+      <p style="font-size:0.75rem;opacity:0.4">Department of Surgery · AIIMS New Delhi</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// NAV TOGGLE
+function toggleNav(){
+  document.getElementById('navLinks').classList.toggle('open');
+}
+
+// SCROLL REVEAL
+function revealOnScroll(){
+  document.querySelectorAll('.reveal').forEach(el=>{
+    const rect=el.getBoundingClientRect();
+    if(rect.top<window.innerHeight-80) el.classList.add('visible');
+  });
+}
+window.addEventListener('scroll',revealOnScroll,{passive:true});
+revealOnScroll();
+
+// NAV SCROLL EFFECT
+window.addEventListener('scroll',function(){
+  const nav=document.getElementById('nav');
+  nav.style.background=window.scrollY>50?'rgba(10,22,40,0.98)':'rgba(10,22,40,0.96)';
+},{ passive:true });
+
+// PUBLICATION FILTER
+function filterPub(btn,cat){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.pub-card').forEach(card=>{
+    if(cat==='all'||card.dataset.cat===cat){
+      card.style.display='';
+      card.style.animation='fadeUp 0.4s ease both';
+    } else {
+      card.style.display='none';
+    }
+  });
+}
+
+// FORM SUBMIT
+function handleSubmit(){
+  const btn=document.querySelector('.submit-btn');
+  btn.textContent='✓ Message Sent!';
+  btn.style.background='linear-gradient(135deg,#16a34a,#22c55e)';
+  setTimeout(()=>{
+    btn.textContent='Send Message →';
+    btn.style.background='';
+  },3000);
+}
+
+// SMOOTH SECTION HIGHLIGHT
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',function(e){
+    const target=document.querySelector(this.getAttribute('href'));
+    if(target){
+      e.preventDefault();
+      document.getElementById('navLinks').classList.remove('open');
+      target.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+  });
+});
+</script>
+</body>
+</html>
