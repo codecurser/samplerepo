@@ -227,10 +227,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ─────────────────────────────────────────────
-  // RESOURCE FILTER (MBBS / Masters)
+  // RESOURCE FILTER (MBBS / Masters / Pre- & Post-Op)
   // ─────────────────────────────────────────────
   window.filterResources = function(btn, type) {
-    const section = document.getElementById('students');
+    const section = document.getElementById('library');
     section.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
 
@@ -278,5 +278,132 @@ document.addEventListener('DOMContentLoaded', () => {
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
   }
+
+  // ─────────────────────────────────────────────
+  // HERO MOUSE PARALLAX EFFECT
+  // ─────────────────────────────────────────────
+  const heroSection = document.getElementById('home');
+  const heroImgWrap = document.querySelector('.hero-img-wrap');
+  const heroAccents = document.querySelectorAll('.hero-accent, .hero-accent2');
+  const heroLeft = document.querySelector('.hero-left');
+
+  if (heroSection) {
+    heroSection.style.perspective = '1500px';
+    
+    heroSection.addEventListener('mousemove', (e) => {
+      const { width, height, left, top } = heroSection.getBoundingClientRect();
+      const x = (e.clientX - left - width / 2) / (width / 2); // -1 to 1
+      const y = (e.clientY - top - height / 2) / (height / 2); // -1 to 1
+
+      if (heroImgWrap) {
+        heroImgWrap.style.transform = `perspective(1200px) rotateX(${y * -7}deg) rotateY(${x * 7}deg) translate3d(${x * 12}px, ${y * 12}px, 0)`;
+      }
+
+      if (heroLeft) {
+        heroLeft.style.transform = `translate3d(${x * 4}px, ${y * 4}px, 0)`;
+      }
+
+      heroAccents.forEach((accent, idx) => {
+        const factor = (idx + 1) * 15;
+        const dx = x * factor * (idx === 0 ? -1 : 1);
+        const dy = y * factor * (idx === 0 ? -1 : 1);
+        
+        if (accent.classList.contains('hero-accent')) {
+          accent.style.transform = `translate3d(${dx}px, calc(-50% + ${dy}px), 0)`;
+        } else {
+          accent.style.transform = `translate3d(${dx}px, ${dy}px, 0)`;
+        }
+      });
+    }, { passive: true });
+
+    heroSection.addEventListener('mouseleave', () => {
+      if (heroImgWrap) heroImgWrap.style.transform = '';
+      if (heroLeft) heroLeft.style.transform = '';
+      heroAccents.forEach(accent => accent.style.transform = '');
+    });
+  }
+
+  // ─────────────────────────────────────────────
+  // TYPEWRITER EFFECT IN HERO BADGE
+  // ─────────────────────────────────────────────
+  const typewriter = document.querySelector('.typewriter');
+  if (typewriter) {
+    const words = JSON.parse(typewriter.dataset.words);
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let delay = 150;
+
+    const type = () => {
+      const currentWord = words[wordIndex];
+      if (isDeleting) {
+        typewriter.textContent = currentWord.substring(0, charIndex - 1);
+        charIndex--;
+        delay = 50;
+      } else {
+        typewriter.textContent = currentWord.substring(0, charIndex + 1);
+        charIndex++;
+        delay = 100;
+      }
+
+      if (!isDeleting && charIndex === currentWord.length) {
+        isDeleting = true;
+        delay = 2500; // Hold full word
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        delay = 300; // Pause before typing next word
+      }
+
+      setTimeout(type, delay);
+    };
+
+    setTimeout(type, 800);
+  }
+
+  // ─────────────────────────────────────────────
+  // 3D TILT PARALLAX CARD EFFECT (Library & Publications)
+  // ─────────────────────────────────────────────
+  const tiltCards = document.querySelectorAll('.teach-card, .pub-card');
+
+  tiltCards.forEach(card => {
+    card.style.transformStyle = 'preserve-3d';
+    card.style.transition = 'transform 0.15s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease, border-color 0.3s ease';
+
+    card.querySelectorAll('> *').forEach(child => {
+      child.style.transform = 'translateZ(20px)';
+      child.style.transition = 'transform 0.15s cubic-bezier(0.25, 1, 0.5, 1)';
+    });
+
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const xc = rect.width / 2;
+      const yc = rect.height / 2;
+
+      // Calculate tilt angles (max 6-8 degrees for clean professional looks)
+      const angleX = (yc - y) / 18;
+      const angleY = (x - xc) / 18;
+
+      card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) translateY(-6px)`;
+
+      // Dynamic Reflection Highlight
+      const px = (x / rect.width) * 100;
+      const py = (y / rect.height) * 100;
+      card.style.setProperty('--reflection', `radial-gradient(circle at ${px}% ${py}%, rgba(255, 255, 255, 0.08) 0%, transparent 65%)`);
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+      card.style.removeProperty('--reflection');
+      card.querySelectorAll('> *').forEach(child => {
+        child.style.transform = '';
+      });
+    });
+  });
+
+  console.log('Premium Dynamic features initialized.');
 
 });

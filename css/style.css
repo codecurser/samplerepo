@@ -342,6 +342,7 @@ nav.scrolled {
   background: radial-gradient(circle, rgba(37,99,235,0.15) 0%, transparent 70%);
   pointer-events: none;
   animation: float 8s ease-in-out infinite;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .hero-accent2 {
@@ -354,6 +355,7 @@ nav.scrolled {
   background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
   pointer-events: none;
   animation: float 10s ease-in-out infinite reverse;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .hero-grid {
@@ -369,6 +371,25 @@ nav.scrolled {
 
 .hero-left {
   animation: fadeLeft 0.9s ease both;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.typewriter {
+  display: inline-flex;
+  align-items: center;
+}
+
+.typewriter::after {
+  content: '|';
+  margin-left: 3px;
+  color: var(--gold);
+  font-weight: 500;
+  animation: typewriter-blink 0.8s infinite;
+}
+
+@keyframes typewriter-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 .hero-badge {
@@ -737,8 +758,24 @@ nav.scrolled {
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1.1fr;
-  gap: 72px;
+  grid-template-rows: auto auto;
+  gap: 32px 72px;
   align-items: start;
+}
+
+.about-photo {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.about-focus {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.about-right-col {
+  grid-column: 2;
+  grid-row: 1 / span 2;
 }
 
 .about-photo {
@@ -2071,7 +2108,16 @@ footer {
   .hero-right { order: -1; }
   .hero-img-wrap { width: 280px; height: 340px; }
 
-  .about-grid, .contact-grid { grid-template-columns: 1fr; }
+  .about-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 40px;
+  }
+  .about-photo, .about-focus, .about-right-col {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  .contact-grid { grid-template-columns: 1fr; }
   .teach-grid, .articles-grid, .media-grid, .footer-grid { grid-template-columns: repeat(2, 1fr); }
   .awards-grid { grid-template-columns: 1fr; }
 
@@ -2110,4 +2156,22 @@ footer {
   .hero-stats { flex-wrap: wrap; justify-content: center; }
   .section { padding: 70px 0; }
   .back-to-top { bottom: 20px; right: 20px; width: 42px; height: 42px; }
+}
+
+/* ============================================================
+   3D CARD REFLECTION HIGHLIGHT OVERLAYS
+   ============================================================ */
+.teach-card::after, .pub-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--reflection, none);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 5;
+}
+
+.teach-card:hover::after, .pub-card:hover::after {
+  opacity: 1;
 }
